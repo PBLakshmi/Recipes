@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+    <h2>Description Form</h2>
+    <div>
+        <div class="mb-3">
+            <label for="foodname">FoodName:</label>
+            <input type="text" formControlName="name" id="Foodname" placeholder="food items">
+        </div>
+        <div class="mb-3">
+            <label for="description"> Short Description:</label>
+            <textarea formControlName="shortDescription" id="shortDescription" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="description">Description:</label>
+            <textarea formControlName="description" id="description" rows="3"></textarea>
+        </div>
+        <div>
+            <label for="imageUrl" class="form-label">Upload Image</label>
+            <input type="file" class="form-control" formControlName="imageUrl" id="imageUrl" #fileInput>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3" (click)="onSubmit()">Add</button>
+    </div>
+    
+</form>

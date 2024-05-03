@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+<h3>Description Form</h3>
+  <div class="mb-3">
+    <label for="foodname">FoodName:</label>
+    <input type="text" formControlName="name" id="Foodname" placeholder="food items">
+  </div>
+  <div class="md-3">
+    <label for="shortdescription">Short Description</label>
+    <textarea formControlName="shortDescription" id="shortDescription" rows="2"></textarea>
+  <div class="mb-3">
+    <label for="description">Description:</label>
+    <textarea formControlName="description" id="description" rows="3"></textarea>
+  <div>
+   
+    </div>
+    <label for="imageUrl" class="form-label">Upload Image</label>
+    <input type="file" accept="image*/" class="form-control" (change)="onFileSelected($event)" formControlName="imageUrl" id="imageUrl" #fileInput>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3" [disabled]="form.invalid" (click)="onSubmit()">Update</button>
+  </div>
+  </div>
+</form>

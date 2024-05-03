@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="text">POPULAR DISHES</h1>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of recipes">
+      <div class="card">
+        <div class="d-flex justify-content-center align-items-center">
+          <img
+            src="assets/image/{{ item.imageUrl }}"
+            alt="Recipe Image"
+            style="width: 14rem"
+            height="250rem"
+          />
+        </div>
+      
+        <div class="card-body">
+          <h3 class="card-title">{{ item.name }}</h3>
+         
+          <ngb-rating [max]="5"></ngb-rating>
+          <p class="card-text">{{item.shortDescription}}</p>
+          <div class="button">
+            <button
+              type="button"
+              [routerLink]="['view', item.id]"
+              class="btn btn-primary"
+            >
+              View More
+            </button>
+            <button
+              type="button"
+              [routerLink]="['edit', item.id]"
+              class="btn btn-success"
+            >
+              Edit
+            </button>
+
+            <button
+              type="button"
+              *ngIf="item.id"
+              (click)="delete(item.id)"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

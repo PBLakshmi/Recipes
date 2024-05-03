@@ -1,0 +1,12 @@
+<h1>{{ selectedRecipe.name }}</h1>
+<img
+  src="assets/image/{{ selectedRecipe.imageUrl }}"
+  alt=""
+  height="40%"
+  width="30%"
+/>
+<p>{{ selectedRecipe.description}}</p>
+
+<button type="button" [routerLink]="['/']" class="btn btn-primary">
+  Back to Home
+</button>
